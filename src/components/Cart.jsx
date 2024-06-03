@@ -12,8 +12,8 @@ const Cart = () => {
                 <div className="row">
                     <div className="col text-center">
                         <div className="alert alert-secondary" role="alert">
-                            <h3 className="p-1">No se encontraron Productos en el Carrito!</h3>
-                            <Link to={"/"} className="btn bg-black text-white p-2">Volver a la Página Principal</Link>
+                            <h3 className="my-3">No se encontraron Productos en el Carrito!</h3>
+                            <Link to={"/"} className="btn bg-black text-white my-2">Volver a la Página Principal</Link>
                         </div>
                     </div>
                 </div>
@@ -28,22 +28,22 @@ const Cart = () => {
                     <table className="table">
                         <tbody>
                             <tr>
-                                <td colSpan={6} className="text-end"><button className="btn text-white bg-dark rounded-0" onClick={clear}>Vaciar Carrito</button></td>
+                                <td colSpan={6} className="text-end"><button className="btn text-white bg-dark rounded" onClick={clear}>Vaciar Carrito</button></td>
                             </tr>
                             {cart.map(item => (
                                 <tr key={item.id}>
                                     <td><img src={item.imagen} alt={item.nombre} width={100}/></td>
                                     <td className="align-middle text-center">{item.nombre}</td>
                                     <td className="align-middle text-center">${item.precio}</td>
-                                    <td className="align-middle text-center">{item.quantity}</td>
-                                    <td className="align-middle text-end"><img src={trash} width={22} alt="Eliminar Producto" title="Eliminar Producto" onClick={() => {removeItem(item.id)}}/></td>
+                                    <td className="align-middle text-center">x{item.quantity}</td>
+                                    <td className="align-middle text-end"><img src={trash} width={20} alt="Eliminar Producto" title="Eliminar Producto" onClick={() => {removeItem(item.id)}}/></td>
                                 </tr>
                             ))}
                             <tr>
-                                <td colSpan={2} className="text-center"><b>Total</b></td>
-                                <td className="text-center"><b>${getSumProducts()}</b></td>
-                                <td>&nbsp;</td>
-                                <td className="text-end">Checkout</td>
+                                <td colSpan={2} className="align-middle text-center bg-body-secondary"><b>Total</b></td>
+                                <td className="align-middle text-center bg-body-secondary"><b>${getSumProducts()}</b></td>
+                                <td className="bg-body-secondary">&nbsp;</td>
+                                <td className="align-middle text-end bg-body-secondary"><Link to={"/checkout"} className="btn text-white bg-dark rounded">Checkout</Link></td>
                             </tr>
                         </tbody>
                     </table>

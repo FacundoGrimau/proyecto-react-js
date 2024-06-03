@@ -36,7 +36,7 @@ const ItemCount = ({stock, onAdd}) => {
     return (
         <div className="container">
             <div className="row my-1">
-                <div className="col mx-1">
+                <div className="col my-2">
                     <div className="btn-group" role="group">
                         <button type="button" className="btn bg-dark text-white border-white rounded-0" onClick={decrementar}> - </button>
                         <button type="button" className="btn bg-dark text-white border-white rounded-0">{contador}</button>
@@ -45,8 +45,8 @@ const ItemCount = ({stock, onAdd}) => {
                 </div>
             </div>
             <div className="row my-1">
-                <div className="col mx-1">
-                    {visible ? <button type="button" className="btn btn-outline-dark text-uppercase rounded-0" onClick={addToCart}>Agregar Al Carrito</button> : <Link to={"/cart"} className="btn btn-outline-dark text-uppercase rounded-0">Finalizar Compra</Link>}
+                <div className="col my-2">
+                    {visible ? <button type="button" className="btn btn-outline-dark text-uppercase rounded-pill" onClick={addToCart}>Agregar Al Carrito</button> : <Link to={"/cart"} className="btn btn-outline-dark text-uppercase rounded-0">Finalizar Compra</Link>}
                 </div>
             </div>
         </div>

@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="container-fluid">
-            <div className="row p-5">
+        <div className="container">
+            <div className="row p-5 border-secondary-subtle border-top">
                 <div className="col d-flex align-items-center justify-content-center" style={{backgroundImage:`url(${bannerRemera})`, backgroundRepeat:"no-repeat", backgroundSize:"cover", opacity:0.9, height:350, marginRight:25}}>
                     <Link to={"/category/remeras"} className="text-decoration-none">    
                         <span className="bg-black text-white text-uppercase px-3 py-2">Remeras</span>
